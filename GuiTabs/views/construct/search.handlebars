@@ -1,0 +1,26 @@
+<div class="container">
+    <p></p>
+</div>
+<div class="container" id="searchDiv">
+    <h4>Search results for: "{{keyWord}}"</h4>
+    <table class="table table-hover" id="searchPage">
+        <thead>
+            <tr>
+            <th scope="col" id="headName">Tab Name</th>
+            <th scope="col" id="headAuthor">Author</th>
+            <th scope="col" id="headArtist">Artist</th>
+            </tr>
+        </thead>
+        <tbody class="table table-hover table-borderless">
+            {{#each data}}
+            <tr id={{@index}}>
+                <td scope="row"><a href="/tabs/?tabId={{_id}}">{{tabName}}</a></td>
+                <td>{{author}}</td>
+                <td>{{artistName}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    {{{pages}}}
+    <p id="error">{{error}}</p>
+</div>
